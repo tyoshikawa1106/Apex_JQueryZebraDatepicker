@@ -1,0 +1,31 @@
+<apex:page standardController="Opportunity" id="page">
+    
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" />
+    <apex:includeScript value="{!URLFOR($Resource.JQueryZebraDatepicker, 'public/javascript/zebra_datepicker.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.JQueryZebraDatepicker, 'public/css/default.css')}"/>
+    
+    <apex:sectionHeader Title="Force.com" subtitle="Zebra Datepicker Demo" />
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!save}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Input Section" columns="2" id="section">
+                <apex:inputField value="{!Opportunity.Name}" id="oppName" />
+                <apex:inputField value="{!Opportunity.StageName}" id="oppStageName" />
+                <apex:inputField value="{!Opportunity.AccountId}" id="oppAccount" />
+                <apex:inputText value="{!Opportunity.CloseDate}" styleClass="zebra_datepicker" id="oppCloseDate" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script type="text/javascript">
+        var $j = jQuery.noConflict();
+        $j(document).ready(function() {
+            $j('.zebra_datepicker').Zebra_DatePicker({
+                format: 'Y/m/d'
+            });
+        });
+    </script>
+</apex:page>
