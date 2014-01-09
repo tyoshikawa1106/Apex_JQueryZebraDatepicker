@@ -1,7 +1,7 @@
 Apex_JQueryZebraDatepicker
 ==========================
 
-JQueryのZebraDatepickerをVisualforceで動かしてみました。  
+jQueryのZebraDatepickerをVisualforceで動かしてみました。  
   
 > Zebra_DatePicker  
 > http://stefangabos.ro/jquery/zebra_datepicker-version-1-0-now-available/  
